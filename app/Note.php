@@ -11,4 +11,16 @@ class Note extends Model
         'id_place',
         'value',
     ];
+//liaison utilisateur
+    public function user()
+    {
+        return $this->belongsToMany('App\User', 'id', 'id_user');
+    }
+//liaison lieu    
+    public function place()
+    {
+        return $this->belongsToMany('App\Place', 'id', 'id_place');
+    }
+
+
 }

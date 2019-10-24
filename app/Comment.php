@@ -11,4 +11,9 @@ class Comment extends Model
         'id_place',
         'text',
     ];
+//Relation utilisateur
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'id_user', 'id');
+    }
 }
