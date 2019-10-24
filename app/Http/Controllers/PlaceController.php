@@ -18,6 +18,7 @@ class PlaceController extends Controller
         return view('place.index', compact('lieu')); //Je retourne la vue index du dossier Place, avec les élément dans variable "lieu"
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
