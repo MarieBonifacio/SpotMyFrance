@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('lieu', 'PlaceController@index')->name('place.index');
+
+Route::get('lieu/{name?}', 'PlaceController@show')->name('place.show');
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
