@@ -14,12 +14,12 @@ class Note extends Model
 //liaison utilisateur
     public function user()
     {
-        return $this->belongsToMany('App\User', 'id', 'id_user');
+        return $this->belongsTo('App\User', 'id', 'id_user');
     }
 //liaison lieu    
     public function place()
     {
-        return $this->belongsToMany('App\Place', 'id', 'id_place');
+        return $this->belongsTo('App\Place', 'id', 'id_place');
     }
 
 

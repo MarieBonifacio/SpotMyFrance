@@ -42,4 +42,14 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Comment', 'id', 'id_user');
     }
+    //Relation lieux
+    public function places()
+    {
+        return $this->hasMany('App\Place', 'id_user', 'id');
+    }
+    //Relation note
+    public function notes()
+    {
+        return $this->hasMany('App\Note', 'id_user', 'id')
+    }
 }

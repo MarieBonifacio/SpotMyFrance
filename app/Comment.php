@@ -16,4 +16,9 @@ class Comment extends Model
     {
         return $this->belongsTo('App\User', 'id_user', 'id');
     }
+//Relation lieux
+    public function places()
+    {
+        return $this->belongsTo('App\Place', 'id', 'id_place');
+    }
 }

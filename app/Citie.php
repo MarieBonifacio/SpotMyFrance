@@ -15,4 +15,14 @@ class Citie extends Model
         'gps_lat',
         'gps_lng',
     ];
+    //Liaison Département
+    public function departments()
+    {
+        return $this->belongsTo('App\Department', 'code', 'department_code');
+    }
+    //Liaison lieu
+    public function places()
+    {
+        return $this->hasMany('App\Place', 'id_city', 'id');
+    }
 }

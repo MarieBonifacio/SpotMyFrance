@@ -10,4 +10,9 @@ class Categorie extends Model
         'name',
         'order',
     ];   
+    //Laisison Lieux
+    public function places()
+    {
+        return $this->hasMany('App\Place', 'id_category', 'id');
+    }
 }

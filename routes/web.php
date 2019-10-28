@@ -11,9 +11,14 @@
 |
 */
 
+//Affichage liste lieux
 Route::get('lieu', 'PlaceController@index')->name('place.index');
 
+//Affichage d'un lieu
 Route::get('lieu/{name?}', 'PlaceController@show')->name('place.show');
+
+//Affichage profil user
+Route::get('user/{id?}', 'UserController@show')->name('user.show');
 
 Auth::routes();
 
