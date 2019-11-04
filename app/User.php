@@ -50,6 +50,6 @@ class User extends Authenticatable
     //Relation note
     public function notes()
     {
-        return $this->hasMany('App\Note', 'id_user', 'id')
+        return $this->hasMany('App\Note', 'id_user', 'id');
     }
 }

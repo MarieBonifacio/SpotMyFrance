@@ -12,14 +12,37 @@
 */
 
 //Affichage liste lieux
-Route::get('lieu', 'PlaceController@index')->name('place.index');
+Route::get('/places', 'PlaceController@index')->name('place.index');
 
-//Affichage d'un lieu
-Route::get('lieu/{name?}', 'PlaceController@show')->name('place.show');
+//Affichage liste lieux par catégories
+Route::get('/places/{name}', 'PlaceController@indexByCategory')->name('place.index');
 
-//Affichage profil user
-Route::get('user/{id?}', 'UserController@show')->name('user.show');
+//Affichage d'un seul lieu
+Route::get('lieu/{name?}', 'PlaceController@showPlace')->name('place.show');
+
+//Affichage création lieu
+Route::get('/createPlace', 'PlaceController@createPlace')->name('place.create')->middleware('auth');
+
+//Enregistrement lieu créé
+Route::post('/storePlace', 'PlaceController@storePlace')->name('place.store')->middleware('auth');
+
+//Mise à jour du lieu
+Route::get('/updatePlace/{id}', 'PlaceController@edit')->name('place.edit')->middleware('auth');
+Route::put('/updatePlace/{place}', 'PlaceController@update')->name('place.update')->middleware('auth');
+
+//Affichage du profil user
+Route::get('user/{id}', 'UserController@showProfil')->name('user.show');
+
+//images
+Route::get('image-upload', 'ImageUploadController@imageUpload')->name('imageUpload');
+Route::post('image-upload', 'ImageUploadController@imageUploadPost')->name('imageUploadPost');
+
+
 
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+
+//ROUTE TEST
+

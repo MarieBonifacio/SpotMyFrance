@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
@@ -43,9 +44,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showProfil($id)
     {
-        //
+        //Dans une variable, je stocke tous les éléments du modèle User
+        $user = User::where('id', $id)->first();
+        //Je crée ma vue profil.blade dans le dossier user, mais besoin d'un tableau de données avec les variables du dessus
+        return view('User/profil', ["user" =>$user]);
     }
 
     /**
@@ -56,7 +60,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('User/profilEdit');
     }
 
     /**
@@ -66,9 +70,26 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //A voir : pour modif mot de passe, login et adresse mail
     public function update(Request $request, $id)
-    {
-        //
+    // tous les champs en required sauf mots de passe
+    // si les deux champs mot de passe sont vide, pas de modifs du mdp
+    {   
+        if (auth()->guest()){
+            flash('Vous devez être connecté pour voir cette page')->error();
+            return redirect('/connexion');
+        }
+        
+        request()->validate([
+            'login' => ['required'],
+            'mail' =>['required']
+        ]);
+
+        // User::update(['login'=>$request->login,'mail'=>$request->mail]);
+
+        //test mdp et verif remplis et pareils
+            // User::update(['mdp'=>$request->mdp);
     }
 
     /**
@@ -79,6 +100,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user= User::findOrFail($id)->delete();
+        return redirect()->route('/');
     }
 }

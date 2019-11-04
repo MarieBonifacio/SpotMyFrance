@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Place; //appeler modèles utiles dans controller
+use App\Models\Place; //appeler modèles utiles dans controller
 
 class PlaceController extends Controller
 {
@@ -14,8 +14,32 @@ class PlaceController extends Controller
      */
     public function index()
     {
-        $lieu=Place::all(); // Je prends tout dans le modèle Place
-        return view('place.index', compact('lieu')); //Je retourne la vue index du dossier Place, avec les élément dans variable "lieu"
+        $lieux=Place::all(); // Je prends tout dans le modèle Place
+        return view('Place/index', ["lieux"=>$lieux]); //Je retourne la vue index du dossier Place, avec les élément dans variable "lieu"
+    }
+
+    //Lieux par catégories, faire un objet JSON avec liste de catégories
+
+    public function indexByCategory($name)
+    {
+        $lieux= Categorie::all()->where('name', $name)->first()->places();
+        return view('Place/index', ["lieux"=>$lieux]);
+        
+        // $category = json_decode($category);
+        // $collection;
+        // if (is_array($category)){
+        //     $category_ids = collect($category)->pluck('id');
+        
+        //     $places = Place::whereHas('categories', function($query) use ($category_ids) {
+        //         // Assuming your category table has a column id
+        //         $query->whereIn('categories.id', $category_ids);
+        //     })->get();
+            
+        // } else {
+        //     dd('Not array');
+        // }
+
+        // return view('Place/index', ["places"=>$collection]);
     }
 
 
@@ -24,9 +48,9 @@ class PlaceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createPlace()
     {
-        //
+        return view('Place/create');
     }
 
     /**
@@ -35,9 +59,28 @@ class PlaceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storePlace(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'description'=>'required',
+            'category'=>'required'
+            //vérif formulaire
+        ]);
+
+        //récup lat et long (API)
+        
+        Place::create([
+            'name'=> $request->name,
+            'latitude' => $request->latitude, //pour tester
+            'longitude' => $request->longitude,//pour tester
+            'description' =>$request->description,
+            'id_city'=>$request->ville,//pour tester
+            'id_region'=>$request->region,//pour tester
+            'average_grade' => 0,
+            'id_user' => Auth::user()->id,
+            'id_category' => $request->category
+        ]);
     }
 
     /**
@@ -46,10 +89,10 @@ class PlaceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showPlace($id)
     {
         $lieu=Place::all()->where('id', $id)->first();
-        return view('place.show', compact('lieu'));
+        return view('Place/show', ["lieu"=>$lieu]);
     }
 
     /**
@@ -60,7 +103,8 @@ class PlaceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $place = Place::findOrFail($id);
+        return view('Place/edit', ["article"=>$article]);
     }
 
     /**
@@ -72,7 +116,7 @@ class PlaceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //update note
     }
 
     /**
@@ -83,6 +127,7 @@ class PlaceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $place= Place::findOrFail($id)->delete();
+        return redirect()->route('place.index');
     }
 }
