@@ -7,3 +7,75 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+/* ***********************************
+Elodie : Début du CSS "Perso"
+ *************************************/
+
+body,html{
+    width: 100%;
+    height: 100%;
+    background: rgb(40,50,57);
+    background: linear-gradient(342deg, rgba(40,50,57,1) 0%, rgba(14,19,24,1) 65%);
+    color:white;
+    font-family: $font-family-sans-serif;
+}
+/* ***********************************
+Elodie : css pour écraser le style de bootstrap
+ *************************************/
+.navbar{
+    background-color: rgba(0,0,0,0.2) !important;
+    color:white !important;
+}
+a.navbar-brand{
+        color: white !important;
+        left:5%;
+
+}
+.navbar-brand{
+    right: 0% !important;
+    
+}
+
+
+
+/* ***********************************
+Elodie : les variable sont présente dans le _variable.scss
+ *************************************/
+.nav-link{
+    color: $darkgrey !important;
+    font-size:120%;
+}
+.nav-link:hover{
+    color: $anis!important;
+}
+/* ***********************************
+Elodie : CSS de la barre de recherche (dans la nav bar)
+ *************************************/
+.btn{
+    color : white !important;
+    border:none;
+    width: 20%;
+}
+.btn:hover{
+    background-color:$anis !important;
+    color:black !important;
+}
+.form-control{
+    border-radius:2px !important;
+    border-color:$darkgrey;
+    background-color:  rgba(0,0,0,0.2) !important;
+    color: white;
+}
+/* ***********************************************
+Elodie : taille de l'icone loupe du btn rechercher
+ *************************************************/
+.loupe{
+    width: 38%;
+    right: 10%;
+}
+/* ***********************************************
+Elodie : Fin du CSS de l'app.blade ce qui suit va se trouver dans un autre css afin de segmenter et d'éviter un trop long chargement de l'application
+ *************************************************/
+.card-body{
+    color : black !important;
+}

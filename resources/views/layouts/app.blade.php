@@ -14,49 +14,58 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/appstyle.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
-        <nav class="nav_bar">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img class="loupe" src="../img/loupe.svg" alt="icone loupe pour la recherche"></button>
+                          </form>
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('place.index') }}">{{ __('Lire') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('place.index') }}">{{ __('Cueillir') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('place.index') }}">{{ __('Marcher') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('place.index') }}">{{ __('Courir') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('place.index') }}">{{ __('Explorer') }}</a>
+                            </li>
                         <!-- Authentication Links -->
                         @guest
-                        <li class="link_nav">
-                                <a class="nav_bar" href="{{ route('login') }}">{{ __('Lire') }}</a>
-                            </li>
-                            <li class="link_nav">
-                                    <a class="link_category" href="{{ route('login') }}">{{ __('Cueillir') }}</a>
-                                </li>
-                                <li class="link_nav">
-                                        <a class="link_category" href="{{ route('login') }}">{{ __('Marcher') }}</a>
-                                    </li>
-                                    <li class="link_nav">
-                                            <a class="link_category" href="{{ route('login') }}">{{ __('Courir') }}</a>
-                                        </li>
-                                        <li class="link_nav">
-                                                <a class="link_category" href="{{ route('login') }}">{{ __('Explorer') }}</a>
-                                            </li>
-                            <li class="link_nav">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="link_nav">
-                                    <a class="link_category" href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 </li>
                             @endif
                         @else
@@ -87,6 +96,5 @@
             @yield('content')
         </main>
     </div>
-
 </body>
 </html>
