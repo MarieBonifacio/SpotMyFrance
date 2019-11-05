@@ -15,7 +15,7 @@
 Route::get('/places', 'PlaceController@index')->name('place.index');
 
 //Affichage liste lieux par catégories
-Route::get('/places/{name}', 'PlaceController@indexByCategory')->name('place.index');
+Route::get('/places/{name}', 'PlaceController@indexByCategory')->name('place.indexs');
 
 //Affichage d'un seul lieu
 Route::get('lieu/{name?}', 'PlaceController@showPlace')->name('place.show');

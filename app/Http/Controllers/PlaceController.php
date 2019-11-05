@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Place; //appeler modèles utiles dans controller
+use Auth;
 
 class PlaceController extends Controller
 {
@@ -50,7 +51,8 @@ class PlaceController extends Controller
      */
     public function createPlace()
     {
-        return view('Place/create');
+        // return view('Place/create');
+        return view('TEST');
     }
 
     /**
@@ -69,7 +71,7 @@ class PlaceController extends Controller
         ]);
 
         //récup lat et long (API)
-        
+
         Place::create([
             'name'=> $request->name,
             'latitude' => $request->latitude, //pour tester
@@ -77,10 +79,13 @@ class PlaceController extends Controller
             'description' =>$request->description,
             'id_city'=>$request->ville,//pour tester
             'id_region'=>$request->region,//pour tester
+            'id_department' => 1,//pour tester
             'average_grade' => 0,
             'id_user' => Auth::user()->id,
             'id_category' => $request->category
         ]);
+
+        return redirect()->route('place.index');
     }
 
     /**
