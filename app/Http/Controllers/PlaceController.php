@@ -24,7 +24,8 @@ class PlaceController extends Controller
 
     public function indexByCategory($name)
     {
-        $lieux= Categorie::all()->where('name', $name)->first()->places();
+        $lieux = Categorie::all()->where('name', $name)->first()->places;
+        // dd($lieux);
         return view('Place/index', ["lieux"=>$lieux]);
         
         // $category = json_decode($category);

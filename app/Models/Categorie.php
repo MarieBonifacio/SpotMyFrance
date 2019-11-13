@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Place;
 use Illuminate\Database\Eloquent\Model;
 
 class Categorie extends Model
@@ -13,6 +13,6 @@ class Categorie extends Model
     //Laisison Lieux
     public function places()
     {
-        return $this->hasMany('App\Place', 'id_category', 'id');
+        return $this->hasMany('App\Models\Place', 'id_category', 'id');
     }
 }
