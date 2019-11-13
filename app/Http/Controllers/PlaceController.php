@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Place; //appeler modèles utiles dans controller
+use App\Models\Categorie;
 use Auth;
 
 class PlaceController extends Controller
@@ -67,7 +68,7 @@ class PlaceController extends Controller
             'name'=>'required',
             'description'=>'required',
             'category'=>'required'
-            //vérif formulaire
+            //vérif champs formulaire
         ]);
 
         //récup lat et long (API)
