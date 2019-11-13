@@ -11139,7 +11139,11 @@ Elodie : les variable sont présente dans le _variable.scss
 .nav-link {
   color: #252F36 !important;
   font-size: 120%;
+
 }
+/* #co{
+    color:greenyellow !important;
+  } */
 
 .nav-link:hover {
   color: greenyellow !important;
@@ -11183,4 +11187,20 @@ Elodie : Fin du CSS de l'app.blade ce qui suit va se trouver dans un autre css a
 .card-body {
   color: black !important;
 }
+
+/************************
+CSS du formulaire de connexion
+*************************/
+.card{
+background-color:transparent!important;
+color:greenyellow!important;
+}
+.card-body{
+  background-color:transparent!important;
+  color:greenyellow!important;
+}
+
+/************************
+CSS du formulaire d'inscription
+*************************/
 
