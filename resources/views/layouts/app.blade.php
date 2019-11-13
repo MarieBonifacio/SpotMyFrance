@@ -44,19 +44,19 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('place.index') }}">{{ __('Lire') }}</a>
+                                <a class="nav-link" href="{{ route('place.indexs',"Lire") }}">{{ __('Lire') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('place.index') }}">{{ __('Cueillir') }}</a>
+                                <a class="nav-link" href="{{ route('place.indexs',"Cueillir") }}">{{ __('Cueillir') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('place.index') }}">{{ __('Marcher') }}</a>
+                                <a class="nav-link" href="{{ route('place.indexs',"Marcher") }}">{{ __('Marcher') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('place.index') }}">{{ __('Courir') }}</a>
+                                <a class="nav-link" href="{{ route('place.indexs',"Courir") }}">{{ __('Courir') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('place.index') }}">{{ __('Explorer') }}</a>
+                                <a class="nav-link" href="{{ route('place.indexs',"Explorer") }}">{{ __('Explorer') }}</a>
                             </li>
                         <!-- Authentication Links -->
                         @guest
