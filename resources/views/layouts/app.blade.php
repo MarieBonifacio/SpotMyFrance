@@ -36,7 +36,7 @@
                     <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img class="loupe" src="../img/loupe.svg" alt="icone loupe pour la recherche"></button>
-                          </form>
+                    </form>
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
