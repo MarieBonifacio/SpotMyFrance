@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Place; //appeler modèles utiles dans controller
 use App\Models\Categorie;
+use App\Models\Citie;
+use App\Models\Region;
+use App\Models\Department;
 use Intervention\Image\Facades\Image;
 use Auth;
 
@@ -80,10 +83,8 @@ class PlaceController extends Controller
         $request->photo->move(public_path('img/places/'), $imageName);
 
         //récup exif photo
-
-
         $data = Image::make(public_path('img/places/'.$imageName))->exif();
-        // dd($data);
+
         if(isset($data['GPSLatitude'])){
         $lat = eval('return ' . $data['GPSLatitude'][0] . ';')
             + (eval('return ' . $data['GPSLatitude'][1] . ';') / 60)
@@ -93,6 +94,7 @@ class PlaceController extends Controller
             + (eval('return ' . $data['GPSLongitude'][2] . ';') / 3600);
             echo "$lat, $lng";
         } else {
+            //RETURN VIEW ERREUR
             echo "No GPS Info"; 
         };
         //API
@@ -115,36 +117,29 @@ class PlaceController extends Controller
 
         echo " $postcode, $city, $department";
 
+        //DB
+        $ville = Citie::all()->where('name', $city)->first();
+        $dptm = Department::all()->where('code', $ville->department_code)->first();
+        $region= Region::all()->where('code', $dptm->region_code)->first();
 
+        $cityName=$ville->name;
+        $dptmName=$dptm->name;
+        $region=$region->name;
 
+        $place= Place::create([
+            'name'=> $request->name,
+            'latitude' => $lat,
+            'longitude' => $lng,
+            'description' =>$request->description,
+            'id_city'=>$ville->id,
+            'id_region'=> $region->id,
+            'id_department' => $dptm->id,
+            'average_grade' => 0,
+            'id_user' => Auth::user()->id,
+            'id_category' => $request->category
+        ]);
 
-        
-
-        
-
-
-
-
-
-        // $ curl -X GET 'https://places-dsn.algolia.net/1/places/reverse?aroundLatLng=48.880379,%202.327007&hitsPerPage=5&language=fr';
-
-        dd($data);
-
-
-        // Place::create([
-        //     'name'=> $request->name,
-        //     'latitude' => $request->latitude, //pour tester
-        //     'longitude' => $request->longitude,//pour tester
-        //     'description' =>$request->description,
-        //     'id_city'=>$request->ville,//pour tester
-        //     'id_region'=>$request->region,//pour tester
-        //     'id_department' => 1,//pour tester
-        //     'average_grade' => 0,
-        //     'id_user' => Auth::user()->id,
-        //     'id_category' => $request->category
-        // ]);
-
-        // return redirect()->route('place.index');
+        return redirect()->route('place.show', ['id'=>$place->id]);
     }
 
     /**

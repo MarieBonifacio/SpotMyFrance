@@ -18,7 +18,7 @@ Route::get('/places', 'PlaceController@index')->name('place.index');
 Route::get('/places/{name}', 'PlaceController@indexByCategory')->name('place.indexs');
 
 //Affichage d'un seul lieu
-Route::get('lieu/{name}', 'PlaceController@showPlace')->name('place.show');
+Route::get('lieu/{id}', 'PlaceController@showPlace')->name('place.show');
 
 //Affichage création lieu
 Route::get('/createPlace', 'PlaceController@createPlace')->name('place.create')->middleware('auth');

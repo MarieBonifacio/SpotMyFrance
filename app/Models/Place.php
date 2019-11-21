@@ -27,7 +27,7 @@ class Place extends Model
     //Liaison utlisateur
     public function user()
     {
-        return $this->belongsTo('App\Models\User', 'id', 'id_user');
+        return $this->belongsTo('App\Models\User', 'id_user', 'id');
     }
     //Liaison catégories
     public function categories()
@@ -42,17 +42,17 @@ class Place extends Model
     //Liaison régions
     public function regions()
     {
-        return $this->belongsTo('App\Models\Region', 'id', 'id_region');
+        return $this->belongsTo('App\Models\Region', 'id_region', 'id');
     }
     //Liaison département
     public function departments()
     {
-        return $this->belongsTo('App\Models\Department', 'id', 'id_department');
+        return $this->belongsTo('App\Models\Department', 'id_department', 'id');
     }
     //Liaison ville
     public function cities()
     {
-        return $this->belongsTo('App\Models\Citie', 'id', 'id_city');
+        return $this->belongsTo('App\Models\Citie', 'id_city', 'id');
     }
 
 }
