@@ -24,7 +24,7 @@ Route::get('lieu/{name}', 'PlaceController@showPlace')->name('place.show');
 Route::get('/createPlace', 'PlaceController@createPlace')->name('place.create')->middleware('auth');
 
 //Enregistrement lieu créé
-Route::post('/storePlace', 'PlaceController@storePlace')->name('place.store')->middleware('auth');
+Route::post('/storePlace', 'PlaceController@storePlace')->name('place.store');
 
 //Mise à jour du lieu
 Route::get('/updatePlace/{id}', 'PlaceController@edit')->name('place.edit')->middleware('auth');
@@ -33,9 +33,6 @@ Route::put('/updatePlace/{place}', 'PlaceController@update')->name('place.update
 //Affichage du profil user
 Route::get('user/{id}', 'UserController@showProfil')->name('user.show');
 
-//images
-Route::get('image-upload', 'ImageUploadController@imageUpload')->name('imageUpload');
-Route::post('image-upload', 'ImageUploadController@imageUploadPost')->name('imageUploadPost');
 
 
 
@@ -45,4 +42,5 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 //ROUTE TEST
+Route::get('/test', 'PlaceController@createPlace');
 

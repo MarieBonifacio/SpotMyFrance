@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Place; //appeler modèles utiles dans controller
 use App\Models\Categorie;
+use Intervention\Image\Facades\Image;
 use Auth;
 
 class PlaceController extends Controller
@@ -65,29 +66,85 @@ class PlaceController extends Controller
      */
     public function storePlace(Request $request)
     {
+        
         $request->validate([
             'name'=>'required',
             'description'=>'required',
-            'category'=>'required'
+            'category'=>'required',
+            'photo'=>'required',
             //vérif champs formulaire
         ]);
 
-        //récup lat et long (API)
+        // upload photo
+        $imageName = time().'.'.$request->photo->extension();  
+        $request->photo->move(public_path('img/places/'), $imageName);
 
-        Place::create([
-            'name'=> $request->name,
-            'latitude' => $request->latitude, //pour tester
-            'longitude' => $request->longitude,//pour tester
-            'description' =>$request->description,
-            'id_city'=>$request->ville,//pour tester
-            'id_region'=>$request->region,//pour tester
-            'id_department' => 1,//pour tester
-            'average_grade' => 0,
-            'id_user' => Auth::user()->id,
-            'id_category' => $request->category
-        ]);
+        //récup exif photo
 
-        return redirect()->route('place.index');
+
+        $data = Image::make(public_path('img/places/'.$imageName))->exif();
+        // dd($data);
+        if(isset($data['GPSLatitude'])){
+        $lat = eval('return ' . $data['GPSLatitude'][0] . ';')
+            + (eval('return ' . $data['GPSLatitude'][1] . ';') / 60)
+            + (eval('return ' . $data['GPSLatitude'][2] . ';') / 3600);
+        $lng = eval('return ' . $data['GPSLongitude'][0] . ';')
+            + (eval('return ' . $data['GPSLongitude'][1] . ';') / 60)
+            + (eval('return ' . $data['GPSLongitude'][2] . ';') / 3600);
+            echo "$lat, $lng";
+        } else {
+            echo "No GPS Info"; 
+        };
+        //API
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://places-dsn.algolia.net/1/places/reverse?aroundLatLng='.$lat.','.$lng.'&hitsPerPage=3&language=fr');
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $output = curl_exec($ch);
+        curl_close($ch);
+
+        $response = json_decode($output);
+        // dd($response->hits);
+
+
+        //DONNEES RECUPEREES
+        $postcode= $response->hits[0]->postcode[0];
+        $city = $response->hits[0]->city[0];
+        $department = $response->hits[0]->administrative[0];
+
+        echo " $postcode, $city, $department";
+
+
+
+
+        
+
+        
+
+
+
+
+
+        // $ curl -X GET 'https://places-dsn.algolia.net/1/places/reverse?aroundLatLng=48.880379,%202.327007&hitsPerPage=5&language=fr';
+
+        dd($data);
+
+
+        // Place::create([
+        //     'name'=> $request->name,
+        //     'latitude' => $request->latitude, //pour tester
+        //     'longitude' => $request->longitude,//pour tester
+        //     'description' =>$request->description,
+        //     'id_city'=>$request->ville,//pour tester
+        //     'id_region'=>$request->region,//pour tester
+        //     'id_department' => 1,//pour tester
+        //     'average_grade' => 0,
+        //     'id_user' => Auth::user()->id,
+        //     'id_category' => $request->category
+        // ]);
+
+        // return redirect()->route('place.index');
     }
 
     /**
