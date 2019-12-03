@@ -11,11 +11,13 @@
 |
 */
 
-//Affichage liste lieux
-Route::get('/places', 'PlaceController@index')->name('place.index');
+
 
 //Affichage liste lieux par catégories
 Route::get('/places/{name}', 'PlaceController@indexByCategory')->name('place.indexs');
+
+//Affichage liste lieux
+Route::get('/places', 'PlaceController@index')->name('place.index');
 
 //Affichage d'un seul lieu
 Route::get('lieu/{id}', 'PlaceController@showPlace')->name('place.show');
@@ -42,5 +44,5 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 //ROUTE TEST
-Route::get('/test', 'PlaceController@createPlace');
+// Route::get('/test', 'PlaceController@createPlace');
 
