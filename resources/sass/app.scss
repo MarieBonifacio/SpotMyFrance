@@ -3,9 +3,11 @@
 
 // Variables
 @import 'variables';
+@import 'home';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+ @import '~bootstrap/scss/bootstrap';
+
 
 /* ***********************************
 Elodie : Début du CSS "Perso"
@@ -79,3 +81,7 @@ Elodie : Fin du CSS de l'app.blade ce qui suit va se trouver dans un autre css a
 .card-body{
     color : black !important;
 }
+
+
+/////////////////////@at-root
+

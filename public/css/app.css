@@ -1,5 +1,161 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+body {
+  font-family: sans-serif;
+  background: -webkit-gradient(linear, left top, right top, from(#252e39), to(#050505));
+  background: linear-gradient(90deg, #252e39 0%, #050505 100%);
+  color: white;
+  position: relative;
+}
+
+.preload {
+  position: absolute;
+  width: 100%;
+  height: 107%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  /* z-index: 1; */
+}
+
+.container_preload {
+  border: solid 2px white;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.text_preload {
+  color: white;
+  font-size: 45px;
+  height: auto;
+  width: 100%;
+}
+
+/*Nav fictiv pour test*/
+
+nav {
+  height: 10vh;
+  width: 100%;
+  color: white;
+}
+
+/*div qui contient le carousel (img et text du haut)*/
+
+.carousel {
+  background: #FAFAFA;
+  margin-bottom: 40px;
+  width: 100%;
+  height: auto;
+  margin-top: 2%;
+  background-color: transparent;
+}
+
+/*cellule représentative de chaque img*/
+
+.carousel-cell {
+  width: 100%;
+  height: 500px;
+  margin-right: 10px;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+/*dimension des img*/
+
+.img {
+  height: 50%;
+  width: auto;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+img {
+  height: 100%;
+  width: auto;
+}
+
+.container_infos_lieu {
+  width: 60%;
+  height: auto;
+  position: relative;
+  background-color: transparent;
+}
+
+.title {
+  width: auto;
+  height: auto;
+  position: absolute;
+  margin-left: 10%;
+  color: yellowgreen;
+}
+
+/*div qui contient la description du lieu*/
+
+.text {
+  width: 50%;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 12%;
+  text-align: justify;
+}
+
+/* class qui correspond au boutton de partage "partagez vos images"*/
+
+.share {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  position: absolute;
+  margin-top: 25%;
+  margin-left: 45%;
+  z-index: 100;
+}
+
+/* add correspond à l'icone + de fontawsome*/
+
+.add {
+  font-size: 20px;
+  color: yellowgreen;
+}
+
+.commentaires {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 10%;
+}
+
+/*taille des cellules du carousel*/
+
+.carousel-nav .carousel-cell {
+  height: 80px;
+  width: 100px;
+}
+
+.carousel-nav .carousel-cell.is-nav-selected {
+  margin-left: 15px;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -11139,11 +11295,7 @@ Elodie : les variable sont présente dans le _variable.scss
 .nav-link {
   color: #252F36 !important;
   font-size: 120%;
-
 }
-/* #co{
-    color:greenyellow !important;
-  } */
 
 .nav-link:hover {
   color: greenyellow !important;
@@ -11187,20 +11339,4 @@ Elodie : Fin du CSS de l'app.blade ce qui suit va se trouver dans un autre css a
 .card-body {
   color: black !important;
 }
-
-/************************
-CSS du formulaire de connexion
-*************************/
-.card{
-background-color:transparent!important;
-color:greenyellow!important;
-}
-.card-body{
-  background-color:transparent!important;
-  color:greenyellow!important;
-}
-
-/************************
-CSS du formulaire d'inscription
-*************************/
 
