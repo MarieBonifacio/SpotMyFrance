@@ -31,22 +31,6 @@ class PlaceController extends Controller
         $lieux = Categorie::all()->where('name', $name)->first()->places;
         // dd($lieux);
         return view('Place/index', ["lieux"=>$lieux]);
-        
-        // $category = json_decode($category);
-        // $collection;
-        // if (is_array($category)){
-        //     $category_ids = collect($category)->pluck('id');
-        
-        //     $places = Place::whereHas('categories', function($query) use ($category_ids) {
-        //         // Assuming your category table has a column id
-        //         $query->whereIn('categories.id', $category_ids);
-        //     })->get();
-            
-        // } else {
-        //     dd('Not array');
-        // }
-
-        // return view('Place/index', ["places"=>$collection]);
     }
 
 
@@ -121,10 +105,6 @@ class PlaceController extends Controller
         $ville = Citie::all()->where('name', $city)->first();
         $dptm = Department::all()->where('code', $ville->department_code)->first();
         $region= Region::all()->where('code', $dptm->region_code)->first();
-
-        $cityName=$ville->name;
-        $dptmName=$dptm->name;
-        $region=$region->name;
 
         $place= Place::create([
             'name'=> $request->name,
