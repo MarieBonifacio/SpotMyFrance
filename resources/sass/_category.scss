@@ -1,0 +1,90 @@
+/*******************************
+css de la page category
+********************************/
+.container_cat {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // align-items: center;
+  }
+  
+  .cat {
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /*******************************
+  gestion de la taille des images dans le grid
+  ********************************/
+  .grid {
+    max-width: 50%;
+    position: relative;
+  }
+  
+  /* clearfix */
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  /* ---- grid-item ---- */
+  
+  .grid-item {
+    width: 25%;
+    height: 25%;
+    margin: 1px;
+    float: left;
+    border-top: solid 3px transparent;
+    border-right: solid 3px transparent;
+  }
+  
+  #taille {
+    width: 100%;
+    height: auto;
+  }
+  
+  .addi {
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+  
+  }
+  
+  .btn_filter {
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+   z-index:999;
+  }
+  
+  .icon {
+      width: 25px;
+      height: auto;
+    }
+    .filter{
+        margin-left:5%;
+        margin-top: -50%;
+        z-index: 998;
+        transition: 2s top;
+        
+        
+    }
+            p{
+                margin:0 !important;
+            }
+
+  .filter.show{
+    margin-top:1%;
+
+  }

@@ -4,28 +4,6 @@
 {{-- Page d'accueil
 
 lien vers tt les lieux : <a href="{{route('place.index')}}">le lien</a> --}}
-{{-- <!DOCTYPE html>
-<html lang="fr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../css/app.css">
-  
-
-  <script src="https://kit.fontawesome.com/d938b44c84.js" crossorigin="anonymous"></script>
-  <title>Test Caroussel</title>
-</head> --}}
-
-{{-- <body> --}}
-  <!-- <div class="preload">
-    <div class="container_preload">
-      <div class="text_preload">
-        <h1>SpotMyFrance</h1>
-      </div>
-    </div>
-  </div> -->
 
   <!-- Use Flickity carousel method -->
   <div class="carousel carousel-main" data-flickity>
@@ -49,11 +27,12 @@ lien vers tt les lieux : <a href="{{route('place.index')}}">le lien</a> --}}
           <div class="people">
             <img class="picture" src="" alt="">
             <p>Marie</p>
-            <p>Super lieu, moi aussi, j'y vais régulièrement.</p>
+            <p id="p-white">Super lieu, moi aussi, j'y vais régulièrement.</p>
           </div>
         </div>
       </div>
     </div>
+  
 
 
     <div class="carousel-cell">
@@ -75,7 +54,7 @@ lien vers tt les lieux : <a href="{{route('place.index')}}">le lien</a> --}}
             <div class="people">
               <img class="picture" src="" alt="">
               <p>Marie</p>
-              <p>Super lieu, moi aussi, j'y vais régulièrement.</p>
+              <p id="p-white">Super lieu, moi aussi, j'y vais régulièrement.</p>
             </div>
           </div>
       </div>
@@ -100,7 +79,7 @@ lien vers tt les lieux : <a href="{{route('place.index')}}">le lien</a> --}}
             <div class="people">
               <img class="picture" src="" alt="">
               <p>Marie</p>
-              <p>Super lieu, moi aussi, j'y vais régulièrement.</p>
+              <p id="p-white">Super lieu, moi aussi, j'y vais régulièrement.</p>
             </div>
           </div>
       </div>
@@ -124,7 +103,7 @@ lien vers tt les lieux : <a href="{{route('place.index')}}">le lien</a> --}}
               <div class="people">
                 <img class="picture" src="" alt="">
                 <p>Marie</p>
-                <p>Super lieu, moi aussi, j'y vais régulièrement.</p>
+                <p id="p-white">Super lieu, moi aussi, j'y vais régulièrement.</p>
               </div>
             </div>
         </div>
@@ -148,7 +127,7 @@ lien vers tt les lieux : <a href="{{route('place.index')}}">le lien</a> --}}
               <div class="people">
                 <img class="picture" src="" alt="">
                 <p>Marie</p>
-                <p>Super lieu, moi aussi, j'y vais régulièrement.</p>
+                <p id="p-white">Super lieu, moi aussi, j'y vais régulièrement.</p>
               </div>
             </div>
         </div>
@@ -173,12 +152,5 @@ lien vers tt les lieux : <a href="{{route('place.index')}}">le lien</a> --}}
     </div>
  
   </div>
-
-
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-</body>
-
-</html>
 
 @endsection

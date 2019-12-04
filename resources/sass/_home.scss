@@ -1,7 +1,7 @@
 
 body { 
   font-family: sans-serif;
-background: linear-gradient(90deg, rgba(37,46,57,1) 0%, rgba(5,5,5,1) 100%);
+  background: linear-gradient(90deg, rgba(37,46,57,1) 0%, rgba(5,5,5,1) 100%);
   color:white;
   position: relative;
 }
@@ -17,19 +17,6 @@ background: linear-gradient(90deg, rgba(37,46,57,1) 0%, rgba(5,5,5,1) 100%);
   /* z-index: 1; */
 }
 
-.container_preload{
-  border:solid 2px white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.text_preload{
-  color: white;
-  font-size: 45px;
-  height: auto;
-  width: 100%;
-}
 /*Nav fictiv pour test*/
 nav{
   height: 10vh;
@@ -100,22 +87,26 @@ img{
   position: absolute;
   margin-top:25%;
   margin-left:45%;
-  z-index: 100;
-
 }
+
 /* add correspond à l'icone + de fontawsome*/
 .add{
   font-size: 20px;
   color:yellowgreen;
 }
-
+/*emplacement des commentaire qui comprends le nom de l'user, le commentaire en question et le titre "commentaire"*/
 .commentaires{
   width: 50%;
   height: auto;
   position: absolute;
   margin-top: 30%;
   margin-left:10%;
+  color:yellowgreen;
 }
+/*****************************
+Css qui concerne la photo de profil présente à côté du commentaire
+******************************/
+
 /*taille des cellules du carousel*/
 .carousel-nav .carousel-cell {
   height: 80px;
@@ -124,5 +115,12 @@ img{
 
 .carousel-nav .carousel-cell.is-nav-selected {
   margin-left: 15px;
+}
 
+/***********************************
+CSS qui concerne la police d'écriture que je veux en blanc
+*************************************/
+#p-white
+{
+  color:white;
 }

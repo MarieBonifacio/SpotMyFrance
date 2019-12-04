@@ -21,23 +21,6 @@ body {
   /* z-index: 1; */
 }
 
-.container_preload {
-  border: solid 2px white;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
-}
-
-.text_preload {
-  color: white;
-  font-size: 45px;
-  height: auto;
-  width: 100%;
-}
-
 /*Nav fictiv pour test*/
 
 nav {
@@ -127,7 +110,6 @@ img {
   position: absolute;
   margin-top: 25%;
   margin-left: 45%;
-  z-index: 100;
 }
 
 /* add correspond à l'icone + de fontawsome*/
@@ -137,13 +119,20 @@ img {
   color: yellowgreen;
 }
 
+/*emplacement des commentaire qui comprends le nom de l'user, le commentaire en question et le titre "commentaire"*/
+
 .commentaires {
   width: 50%;
   height: auto;
   position: absolute;
   margin-top: 30%;
   margin-left: 10%;
+  color: yellowgreen;
 }
+
+/*****************************
+Css qui concerne la photo de profil présente à côté du commentaire
+******************************/
 
 /*taille des cellules du carousel*/
 
@@ -154,6 +143,119 @@ img {
 
 .carousel-nav .carousel-cell.is-nav-selected {
   margin-left: 15px;
+}
+
+/***********************************
+CSS qui concerne la police d'écriture que je veux en blanc
+*************************************/
+
+#p-white {
+  color: white;
+}
+
+/*******************************
+css de la page category
+********************************/
+
+.container_cat {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.cat {
+  width: 40%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+/*******************************
+gestion de la taille des images dans le grid
+********************************/
+
+.grid {
+  max-width: 50%;
+  position: relative;
+}
+
+/* clearfix */
+
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 25%;
+  height: 25%;
+  margin: 1px;
+  float: left;
+  border-top: solid 3px transparent;
+  border-right: solid 3px transparent;
+}
+
+#taille {
+  width: 100%;
+  height: auto;
+}
+
+.addi {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.btn_filter {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+  z-index: 999;
+}
+
+.icon {
+  width: 25px;
+  height: auto;
+}
+
+.filter {
+  margin-left: 5%;
+  margin-top: -50%;
+  z-index: 998;
+  -webkit-transition: 2s top;
+  transition: 2s top;
+}
+
+p {
+  margin: 0 !important;
+}
+
+.filter.show {
+  margin-top: 1%;
 }
 
 /*!
@@ -11293,7 +11395,7 @@ Elodie : les variable sont présente dans le _variable.scss
  *************************************/
 
 .nav-link {
-  color: #252F36 !important;
+  color: #d3cccc !important;
   font-size: 120%;
 }
 

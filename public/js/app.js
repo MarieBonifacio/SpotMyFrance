@@ -36920,6 +36920,15 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var deroul = document.querySelector(".cat .btn_filter .icon");
+deroul.addEventListener('click', toggle);
+
+function toggle() {
+  console.log("toggle");
+  var filtre = document.querySelector(".filter");
+  filtre.classList.toggle("show");
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
