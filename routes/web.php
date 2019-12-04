@@ -44,5 +44,5 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 //ROUTE TEST
-// Route::get('/test', 'PlaceController@createPlace');
+Route::get('/test', 'PlaceController@createPlace');
 
