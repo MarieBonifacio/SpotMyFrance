@@ -55,4 +55,9 @@ class Place extends Model
         return $this->belongsTo('App\Models\Citie', 'id_city', 'id');
     }
 
+    public function photos()
+    {
+        return $this->hasMany('App\Models\Photo', 'id_place', 'id');
+    }
+
 }

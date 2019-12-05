@@ -12,7 +12,6 @@
 */
 
 
-
 //Affichage liste lieux par catégories
 Route::get('/places/{name}', 'PlaceController@indexByCategory')->name('place.indexs');
 
@@ -40,7 +39,9 @@ Route::get('user/{id}', 'UserController@showProfil')->name('user.show');
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+//Affichage 5 derniers Lieux ajoutés sur l'acceuil 
+Route::get('/', 'HomeController@indexHome')->name('home');
+
 
 
 //ROUTE TEST

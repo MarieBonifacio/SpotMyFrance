@@ -8,6 +8,7 @@ use App\Models\Categorie;
 use App\Models\Citie;
 use App\Models\Region;
 use App\Models\Department;
+use App\Models\Photo;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -134,6 +135,13 @@ class PlaceController extends Controller
         $i->resize(320, null, function ($constraint) {
             $constraint->aspectRatio();
         })->save(public_path('img/places/').$directoryName.'/thumbnail/'.$imageName);
+
+        //ENREGISTREMENT PHOTO DB
+        $photo = Photo::create([
+            'id_place'=> $place->id,
+            'name'=> $imageName,
+        ]);
+
 
         return redirect()->route('place.show', ['id'=>$place->id]);
     }
