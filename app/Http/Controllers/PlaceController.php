@@ -55,8 +55,7 @@ class PlaceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function storePlace(Request $request)
-    {
-        
+    {   
         $request->validate([
             'name'=>'required',
             'description'=>'required',
