@@ -258,6 +258,149 @@ p {
   margin-top: 1%;
 }
 
+.carousel-nav .carousel-cell {
+  height: 80px;
+  width: 100px;
+}
+
+.carousel-lieu {
+  width: auto;
+  height: 45%;
+}
+
+.carousel-nav .carousel-cell.is-nav-selected {
+  margin-left: 15px;
+}
+
+/*******************************
+css de la page category
+  ********************************/
+
+.container_cat {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.catbis {
+  width: 40%;
+  height: auto;
+  margin-left: 20%;
+}
+
+.carousel-lieu {
+  width: 500px;
+  height: auto;
+}
+
+.imgbis {
+  width: 500px;
+  height: 400px;
+}
+
+.imgs {
+  width: 100px;
+  height: 100%;
+}
+
+.flickity-prev-next-button {
+  background-color: transparent !important;
+  color: greenyellow !important;
+}
+
+.cont {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+.textbis {
+  text-align: justify;
+}
+
+.titlebis {
+  color: yellowgreen;
+}
+
+.adds {
+  color: yellowgreen;
+}
+
+.commentairesbis {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  margin-top: 5%;
+}
+
+.coms {
+  color: yellowgreen;
+}
+
+.add-com {
+  margin-top: 6%;
+}
+
+.shares {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  position: absolute;
+  margin-left: 25%;
+  margin-top: 3%;
+}
+
+.filterbis {
+  margin-top: -120%;
+}
+
+.adds:hover {
+  cursor: pointer;
+}
+
+.showb {
+  margin-top: 0%;
+}
+
+.le-button {
+  background-color: greenyellow;
+  color: black;
+  border-radius: 50px 50px;
+  border: 1px;
+  width: 5%;
+}
+
+textarea {
+  background-color: #252e39;
+  color: white;
+}
+
+.peoplebis {
+  position: relative;
+}
+
+.picturebis {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -8%;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors

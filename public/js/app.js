@@ -36921,12 +36921,24 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var deroul = document.querySelector(".cat .btn_filter .icon");
-deroul.addEventListener('click', toggle);
+
+if (deroul) {
+  deroul.addEventListener('click', toggle);
+}
 
 function toggle() {
   console.log("toggle");
   var filtre = document.querySelector(".filter");
   filtre.classList.toggle("show");
+}
+
+var deroulbis = document.querySelector(".commentairesbis .peoplebis .add-com .adds");
+deroulbis.addEventListener('click', togglebis);
+
+function togglebis() {
+  console.log("togglebis");
+  var filtrebis = document.querySelector(".filterbis");
+  filtrebis.classList.toggle("showb");
 }
 
 /***/ }),
