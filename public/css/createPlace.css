@@ -1,0 +1,99 @@
+.main{
+    height:100vh;
+    width:100vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+.left{
+    height:80vh;
+    width:40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+span{
+    color:orange;
+}
+.left .formulaireleft{
+    height:50vh;
+    width:30vw;
+}
+
+.checkMarcher, .checkCourir, .checkCeuillir, .checkLire, .checkExplorer{
+    width:10vw;
+    margin-left:1vw;
+    margin-right:1vw;
+    margin-top:1vh;
+}
+
+.left .check{
+    width:30vw;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/*_____________________________FIN PARTIE LEFT _____________________*/
+/*_____________________________DEBUT PARTIE MIDDLE__________________*/
+
+.middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.middle p{
+    color:orange;
+    font-size: 4vh;
+    font-weight: bold;
+}
+.middle button{
+    border-radius: 35px;
+    background-color:orange;
+    border:none;
+    height:5vh;
+    width:15vw;
+    transition:.8s;
+}
+.middle button:hover{
+    background-color: rgb(243, 195, 106);
+}
+.middle{
+    height:80vh;
+    width: 20vw;
+}
+
+
+/*_____________________________FIN PARTIE MIDDLE____________________*/
+/*_____________________________DEBUT PARTIE RIGHT __________________*/
+
+.mainRight{
+    height:45vh;
+}
+
+.right .acces label, .frequentation label, .geolocalisation label{
+    margin-right: 3vw;
+}
+
+span{
+    color:orange;
+}
+
+.right{
+    height:80vh;
+    width:40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.right .pictures .dlPictures{
+    background-color: grey;
+    height:15vh;
+    width:20vh;
+    margin-top:2vh;
+}
+
+/*_____________________________FIN PARTIE RIGHT_____________________*/
