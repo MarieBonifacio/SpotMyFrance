@@ -217,9 +217,7 @@ gestion de la taille des images dans le grid
   height: auto;
   display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
+  margin-top: -30%;
   -webkit-box-align: center;
           align-items: center;
 }
@@ -244,7 +242,7 @@ gestion de la taille des images dans le grid
 
 .filter {
   margin-left: 5%;
-  margin-top: -50%;
+  margin-top: -100%;
   z-index: 998;
   -webkit-transition: 2s top;
   transition: 2s top;
@@ -256,6 +254,10 @@ p {
 
 .filter.show {
   margin-top: 1%;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .carousel-nav .carousel-cell {

@@ -52,7 +52,7 @@ css de la page category
     width: 30%;
     height: auto;
     display: flex;
-    flex-direction: row;
+    margin-top:-30%;
     align-items: center;
     
   
@@ -74,7 +74,7 @@ css de la page category
     }
     .filter{
         margin-left:5%;
-        margin-top: -50%;
+        margin-top: -100%;
         z-index: 998;
         transition: 2s top;
         
