@@ -1,0 +1,396 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+body {
+  font-family: sans-serif;
+  background: -webkit-gradient(linear, left top, right top, from(#252e39), to(#050505));
+  background: linear-gradient(90deg, #252e39 0%, #050505 100%);
+  color: white;
+  position: relative;
+}
+
+.preload {
+  position: absolute;
+  width: 100%;
+  height: 107%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("img/land.jpg");
+  /* z-index: 1; */
+}
+
+.container_preload {
+  border: solid 2px white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.text_preload {
+  color: white;
+  font-size: 45px;
+  height: auto;
+  width: 100%;
+}
+
+/*Nav fictiv pour test*/
+nav {
+  height: 10vh;
+  width: 100%;
+  color: white;
+}
+
+/*div qui contient le carousel (img et text du haut)*/
+.carousel {
+  background: #FAFAFA;
+  margin-bottom: 40px;
+  width: 100%;
+  height: auto;
+  margin-top: 2%;
+  background-color: transparent;
+}
+
+/*cellule représentative de chaque img*/
+.carousel-cell {
+  width: 100%;
+  height: 500px;
+  margin-right: 10px;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+/*dimension des img*/
+.img {
+  height: 50%;
+  width: auto;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+img {
+  height: 100%;
+  width: auto;
+}
+
+.container_infos_lieu {
+  width: 60%;
+  height: auto;
+  position: relative;
+  background-color: transparent;
+}
+
+.title {
+  width: auto;
+  height: auto;
+  position: absolute;
+  margin-left: 10%;
+  color: yellowgreen;
+}
+
+/*div qui contient la description du lieu*/
+.text {
+  width: 50%;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 12%;
+  text-align: justify;
+}
+
+/* class qui correspond au boutton de partage "partagez vos images"*/
+.share {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  margin-top: 25%;
+  margin-left: 45%;
+  z-index: 100;
+}
+
+/* add correspond à l'icone + de fontawsome*/
+.add {
+  font-size: 20px;
+  color: yellowgreen;
+}
+
+.commentaires {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 10%;
+}
+
+/*taille des cellules du carousel*/
+.carousel-nav .carousel-cell {
+  height: 80px;
+  width: 100px;
+}
+
+.carousel-nav .carousel-cell.is-nav-selected {
+  margin-left: 15px;
+}
+
+/* ***********************************
+Elodie : Début du CSS "Perso"
+ *************************************/
+body, html {
+  width: 100%;
+  height: 100%;
+  background: #283239;
+  background: linear-gradient(342deg, #283239 0%, #0e1318 65%);
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ***********************************
+Elodie : css pour écraser le style de bootstrap
+ *************************************/
+.navbar {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: white !important;
+}
+
+a.navbar-brand {
+  color: white !important;
+  left: 5%;
+}
+
+.navbar-brand {
+  right: 0% !important;
+}
+
+/* ***********************************
+Elodie : les variable sont présente dans le _variable.scss
+ *************************************/
+.nav-link {
+  color: #252F36 !important;
+  font-size: 120%;
+}
+
+.nav-link:hover {
+  color: greenyellow !important;
+}
+
+/* ***********************************
+Elodie : CSS de la barre de recherche (dans la nav bar)
+ *************************************/
+.btn {
+  color: white !important;
+  border: none;
+  width: 20%;
+}
+
+.btn:hover {
+  background-color: greenyellow !important;
+  color: black !important;
+}
+
+.form-control {
+  border-radius: 2px !important;
+  border-color: #252F36;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: white;
+}
+
+/* ***********************************************
+Elodie : taille de l'icone loupe du btn rechercher
+ *************************************************/
+.loupe {
+  width: 38%;
+  right: 10%;
+}
+
+/* ***********************************************
+Elodie : Fin du CSS de l'app.blade ce qui suit va se trouver dans un autre css afin de segmenter et d'éviter un trop long chargement de l'application
+ *************************************************/
+.card-body {
+  color: black !important;
+}
+
+body {
+  font-family: sans-serif;
+  background: -webkit-gradient(linear, left top, right top, from(#252e39), to(#050505));
+  background: linear-gradient(90deg, #252e39 0%, #050505 100%);
+  color: white;
+  position: relative;
+}
+
+.preload {
+  position: absolute;
+  width: 100%;
+  height: 107%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("img/land.jpg");
+  /* z-index: 1; */
+}
+
+.container_preload {
+  border: solid 2px white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.text_preload {
+  color: white;
+  font-size: 45px;
+  height: auto;
+  width: 100%;
+}
+
+/*Nav fictiv pour test*/
+nav {
+  height: 10vh;
+  width: 100%;
+  color: white;
+}
+
+/*div qui contient le carousel (img et text du haut)*/
+.carousel {
+  background: #FAFAFA;
+  margin-bottom: 40px;
+  width: 100%;
+  height: auto;
+  margin-top: 2%;
+  background-color: transparent;
+}
+
+/*cellule représentative de chaque img*/
+.carousel-cell {
+  width: 100%;
+  height: 500px;
+  margin-right: 10px;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+/*dimension des img*/
+.img {
+  height: 50%;
+  width: auto;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+img {
+  width: 100%;
+}
+
+.container_infos_lieu {
+  width: 60%;
+  height: auto;
+  position: relative;
+  background-color: transparent;
+}
+
+.title {
+  width: auto;
+  height: auto;
+  position: absolute;
+  margin-left: 10%;
+  color: yellowgreen;
+}
+
+/*div qui contient la description du lieu*/
+.text {
+  width: 50%;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 12%;
+  text-align: justify;
+}
+
+/* class qui correspond au boutton de partage "partagez vos images"*/
+.share {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  margin-top: 25%;
+  margin-left: 45%;
+  z-index: 100;
+}
+
+/* add correspond à l'icone + de fontawsome*/
+.add {
+  font-size: 20px;
+  color: yellowgreen;
+}
+
+.commentaires {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 10%;
+}
+
+/*taille des cellules du carousel*/
+.carousel-nav .carousel-cell {
+  height: 80px;
+  width: 100px;
+}
+
+.carousel-nav .carousel-cell.is-nav-selected {
+  margin-left: 15px;
+}
+/*# sourceMappingURL=style.css.map */

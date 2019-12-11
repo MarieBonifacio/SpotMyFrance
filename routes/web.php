@@ -11,11 +11,12 @@
 |
 */
 
-//Affichage liste lieux
-Route::get('/places', 'PlaceController@index')->name('place.index');
 
 //Affichage liste lieux par catégories
 Route::get('/places/{name}', 'PlaceController@indexByCategory')->name('place.indexs');
+
+//Affichage liste lieux
+Route::get('/places', 'PlaceController@index')->name('place.index');
 
 //Affichage d'un seul lieu
 Route::get('lieu/{id}', 'PlaceController@showPlace')->name('place.show');
@@ -38,7 +39,9 @@ Route::get('user/{id}', 'UserController@showProfil')->name('user.show');
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+//Affichage 5 derniers Lieux ajoutés sur l'acceuil 
+Route::get('/', 'HomeController@indexHome')->name('home');
+
 
 
 //ROUTE TEST

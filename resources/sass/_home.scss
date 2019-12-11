@@ -1,0 +1,126 @@
+
+body { 
+  font-family: sans-serif;
+  background: linear-gradient(90deg, rgba(37,46,57,1) 0%, rgba(5,5,5,1) 100%);
+  color:white;
+  position: relative;
+}
+
+.preload{
+  position: absolute;
+  width: 100%;
+  height: 107%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+//   background-image:url('img/land.jpg');
+  /* z-index: 1; */
+}
+
+/*Nav fictiv pour test*/
+nav{
+  height: 10vh;
+  width: 100%;
+  color:white;
+}
+
+/*div qui contient le carousel (img et text du haut)*/
+.carousel {
+  background: #FAFAFA;
+  margin-bottom: 40px;
+  width: 100%;
+  height: auto;
+  margin-top: 2%;
+  background-color:transparent;
+}
+/*cellule représentative de chaque img*/
+.carousel-cell {
+  width: 100%;
+  height: 500px;
+  margin-right: 10px;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+  display: flex;
+  flex-direction: row;
+}
+/*dimension des img*/
+.img{
+  height: 50%;
+  width: auto;
+  margin-left:10%;
+  margin-top:5%;
+}
+img{
+  height: 100%;
+  width: auto;
+}
+.container_infos_lieu{
+  width: 60%;
+  height: auto;
+  position: relative;
+  background-color: transparent;
+}
+.title{
+  width: auto;
+  height: auto;
+  position: absolute;
+  margin-left: 10%;
+  color: yellowgreen;
+}
+/*div qui contient la description du lieu*/
+.text{
+  width: 50%;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 12%;
+  text-align: justify;
+}
+/* class qui correspond au boutton de partage "partagez vos images"*/
+.share{
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  margin-top:25%;
+  margin-left:45%;
+}
+
+/* add correspond à l'icone + de fontawsome*/
+.add{
+  font-size: 20px;
+  color:yellowgreen;
+}
+/*emplacement des commentaire qui comprends le nom de l'user, le commentaire en question et le titre "commentaire"*/
+.commentaires{
+  width: 50%;
+  height: auto;
+  position: absolute;
+  margin-top: 30%;
+  margin-left:10%;
+  color:yellowgreen;
+}
+/*****************************
+Css qui concerne la photo de profil présente à côté du commentaire
+******************************/
+
+/*taille des cellules du carousel*/
+.carousel-nav .carousel-cell {
+  height: 80px;
+  width: 100px;
+}
+
+.carousel-nav .carousel-cell.is-nav-selected {
+  margin-left: 15px;
+}
+
+/***********************************
+CSS qui concerne la police d'écriture que je veux en blanc
+*************************************/
+#p-white
+{
+  color:white;
+}

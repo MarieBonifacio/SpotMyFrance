@@ -36920,6 +36920,27 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var deroul = document.querySelector(".cat .btn_filter .icon");
+
+if (deroul) {
+  deroul.addEventListener('click', toggle);
+}
+
+function toggle() {
+  console.log("toggle");
+  var filtre = document.querySelector(".filter");
+  filtre.classList.toggle("show");
+}
+
+var deroulbis = document.querySelector(".commentairesbis .peoplebis .add-com .adds");
+deroulbis.addEventListener('click', togglebis);
+
+function togglebis() {
+  console.log("togglebis");
+  var filtrebis = document.querySelector(".filterbis");
+  filtrebis.classList.toggle("showb");
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -36985,8 +37006,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/marie/www/SpotMyFrance/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/marie/www/SpotMyFrance/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/elodie/projetCertif/SpotMyFrance/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/elodie/projetCertif/SpotMyFrance/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

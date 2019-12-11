@@ -1,5 +1,406 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+body {
+  font-family: sans-serif;
+  background: -webkit-gradient(linear, left top, right top, from(#252e39), to(#050505));
+  background: linear-gradient(90deg, #252e39 0%, #050505 100%);
+  color: white;
+  position: relative;
+}
+
+.preload {
+  position: absolute;
+  width: 100%;
+  height: 107%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  /* z-index: 1; */
+}
+
+/*Nav fictiv pour test*/
+
+nav {
+  height: 10vh;
+  width: 100%;
+  color: white;
+}
+
+/*div qui contient le carousel (img et text du haut)*/
+
+.carousel {
+  background: #FAFAFA;
+  margin-bottom: 40px;
+  width: 100%;
+  height: auto;
+  margin-top: 2%;
+  background-color: transparent;
+}
+
+/*cellule représentative de chaque img*/
+
+.carousel-cell {
+  width: 100%;
+  height: 500px;
+  margin-right: 10px;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+/*dimension des img*/
+
+.img {
+  height: 50%;
+  width: auto;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+img {
+  height: 100%;
+  width: auto;
+}
+
+.container_infos_lieu {
+  width: 60%;
+  height: auto;
+  position: relative;
+  background-color: transparent;
+}
+
+.title {
+  width: auto;
+  height: auto;
+  position: absolute;
+  margin-left: 10%;
+  color: yellowgreen;
+}
+
+/*div qui contient la description du lieu*/
+
+.text {
+  width: 50%;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 12%;
+  text-align: justify;
+}
+
+/* class qui correspond au boutton de partage "partagez vos images"*/
+
+.share {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  position: absolute;
+  margin-top: 25%;
+  margin-left: 45%;
+}
+
+/* add correspond à l'icone + de fontawsome*/
+
+.add {
+  font-size: 20px;
+  color: yellowgreen;
+}
+
+/*emplacement des commentaire qui comprends le nom de l'user, le commentaire en question et le titre "commentaire"*/
+
+.commentaires {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 10%;
+  color: yellowgreen;
+}
+
+/*****************************
+Css qui concerne la photo de profil présente à côté du commentaire
+******************************/
+
+/*taille des cellules du carousel*/
+
+.carousel-nav .carousel-cell {
+  height: 80px;
+  width: 100px;
+}
+
+.carousel-nav .carousel-cell.is-nav-selected {
+  margin-left: 15px;
+}
+
+/***********************************
+CSS qui concerne la police d'écriture que je veux en blanc
+*************************************/
+
+#p-white {
+  color: white;
+}
+
+/*******************************
+css de la page category
+********************************/
+
+.container_cat {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.cat {
+  width: 40%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+/*******************************
+gestion de la taille des images dans le grid
+********************************/
+
+.grid {
+  max-width: 50%;
+  position: relative;
+}
+
+/* clearfix */
+
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 25%;
+  height: 25%;
+  margin: 1px;
+  float: left;
+  border-top: solid 3px transparent;
+  border-right: solid 3px transparent;
+}
+
+#taille {
+  width: 100%;
+  height: auto;
+}
+
+.addi {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.btn_filter {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+  z-index: 999;
+}
+
+.icon {
+  width: 25px;
+  height: auto;
+}
+
+.filter {
+  margin-left: 5%;
+  margin-top: -50%;
+  z-index: 998;
+  -webkit-transition: 2s top;
+  transition: 2s top;
+}
+
+p {
+  margin: 0 !important;
+}
+
+.filter.show {
+  margin-top: 1%;
+}
+
+.carousel-nav .carousel-cell {
+  height: 80px;
+  width: 100px;
+}
+
+.carousel-lieu {
+  width: auto;
+  height: 45%;
+}
+
+.carousel-nav .carousel-cell.is-nav-selected {
+  margin-left: 15px;
+}
+
+/*******************************
+css de la page category
+  ********************************/
+
+.container_cat {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.catbis {
+  width: 40%;
+  height: auto;
+  margin-left: 20%;
+}
+
+.carousel-lieu {
+  width: 500px;
+  height: auto;
+}
+
+.imgbis {
+  width: 500px;
+  height: 400px;
+}
+
+.imgs {
+  width: 100px;
+  height: 100%;
+}
+
+.flickity-prev-next-button {
+  background-color: transparent !important;
+  color: greenyellow !important;
+}
+
+.cont {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+.textbis {
+  text-align: justify;
+}
+
+.titlebis {
+  color: yellowgreen;
+}
+
+.adds {
+  color: yellowgreen;
+}
+
+.commentairesbis {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  margin-top: 5%;
+}
+
+.coms {
+  color: yellowgreen;
+}
+
+.add-com {
+  margin-top: 6%;
+}
+
+.shares {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  position: absolute;
+  margin-left: 25%;
+  margin-top: 3%;
+}
+
+.filterbis {
+  margin-top: -120%;
+}
+
+.adds:hover {
+  cursor: pointer;
+}
+
+.showb {
+  margin-top: 0%;
+}
+
+.le-button {
+  background-color: greenyellow;
+  color: black;
+  border-radius: 50px 50px;
+  border: 1px;
+  width: 5%;
+}
+
+textarea {
+  background-color: #252e39;
+  color: white;
+}
+
+.peoplebis {
+  position: relative;
+}
+
+.picturebis {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -8%;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -11137,13 +11538,9 @@ Elodie : les variable sont présente dans le _variable.scss
  *************************************/
 
 .nav-link {
-  color: #252F36 !important;
+  color: #d3cccc !important;
   font-size: 120%;
-
 }
-/* #co{
-    color:greenyellow !important;
-  } */
 
 .nav-link:hover {
   color: greenyellow !important;
@@ -11180,27 +11577,35 @@ Elodie : taille de l'icone loupe du btn rechercher
   right: 10%;
 }
 
+.card {
+  background-color: transparent !important;
+  color: white;
+}
+
 /* ***********************************************
 Elodie : Fin du CSS de l'app.blade ce qui suit va se trouver dans un autre css afin de segmenter et d'éviter un trop long chargement de l'application
  *************************************************/
 
 .card-body {
+  color: white !important;
+}
+
+.btn-link {
+  width: auto !important;
+  height: auto !important;
+  background-color: #252F36 !important;
+  color: white !important;
+}
+
+.btn-link:hover {
+  background-color: greenyellow !important;
   color: black !important;
 }
 
-/************************
-CSS du formulaire de connexion
-*************************/
-.card{
-background-color:transparent!important;
-color:greenyellow!important;
+.btn-primary {
+  background-color: grey !important;
+  color: black !important;
+  width: auto !important;
+  height: auto !important;
 }
-.card-body{
-  background-color:transparent!important;
-  color:greenyellow!important;
-}
-
-/************************
-CSS du formulaire d'inscription
-*************************/
 

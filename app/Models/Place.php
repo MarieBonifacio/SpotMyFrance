@@ -32,7 +32,7 @@ class Place extends Model
     //Liaison catégories
     public function categories()
     {
-        return $this->belongsToMany('App\Models\Categorie', 'id', 'id_category');
+        return $this->belongsTo('App\Models\Categorie', 'id', 'id_category');
     }
     //Liaison tag lieu
     public function taglieu()
@@ -53,6 +53,11 @@ class Place extends Model
     public function cities()
     {
         return $this->belongsTo('App\Models\Citie', 'id_city', 'id');
+    }
+
+    public function photos()
+    {
+        return $this->hasMany('App\Models\Photo', 'id_place', 'id');
     }
 
 }

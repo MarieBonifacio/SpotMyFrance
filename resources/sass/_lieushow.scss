@@ -1,0 +1,114 @@
+.carousel-nav .carousel-cell {
+    height: 80px;
+    width: 100px;
+}
+.carousel-lieu{
+width: auto;
+height: 45%;
+}
+.carousel-nav .carousel-cell.is-nav-selected {
+    margin-left: 15px;
+}
+/*******************************
+css de la page category
+  ********************************/
+.container_cat {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.catbis {
+    width: 40%;
+    height: auto;
+    margin-left: 20%;
+}
+.carousel-lieu{
+    width: 500px;
+    height: auto;
+    
+}
+.imgbis{
+    width: 500px;
+    height: 400px;
+    }
+    .imgs{
+    width: 100px;
+    height: 100%;
+    }
+
+    .flickity-prev-next-button {
+    background-color: transparent !important;
+    color:greenyellow !important;
+    }
+    
+    .cont{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .textbis {
+        text-align: justify;
+      }
+
+      .titlebis {
+        color: yellowgreen;
+      }
+
+      .adds {
+        color: yellowgreen;
+      }
+      
+      .commentairesbis {
+        width: 50%;
+        height: auto;
+        position: absolute;
+        margin-top:5%;
+    }
+    .coms{
+        color:yellowgreen;
+    }
+    .add-com{
+        margin-top:6%;
+    }
+    .shares {
+        width: 30%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        margin-left: 25%;
+        margin-top: 3%;
+      }
+      .filterbis{
+        margin-top: -120%;
+      }
+      .adds:hover{
+        cursor: pointer;
+      }
+      .showb{
+        margin-top: 0%;
+      }
+      .le-button{
+        background-color: greenyellow;
+        color:black;
+        border-radius: 50px 50px;
+        border:1px;
+        width: 5%;
+      }
+      textarea{
+        background-color: rgba(37, 46, 57, 1);
+        color:white;
+      }
+      .peoplebis{
+        position: relative;
+      }
+      .picturebis {
+        width: 50px;
+        height:50px;
+        border-radius:50%;
+        position: absolute;
+        margin-left: -8%;
+      }
