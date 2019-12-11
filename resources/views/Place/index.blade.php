@@ -2,7 +2,7 @@
 
 
 @section('content')
-Je suis la vue de l'index des lieux
+{{-- Je suis la vue de l'index des lieux --}}
 
 @foreach ($lieux as $unlieu)
     {{-- <div>
