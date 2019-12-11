@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,7 +23,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" defer>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
+    <link rel="stylesheet" href="css/createPlace.css">
 
 </head>
 <body>
@@ -35,7 +35,7 @@
                 </a>
                 <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon ">
-                        
+
                     </span>
                 </button>
 

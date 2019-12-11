@@ -44,8 +44,8 @@ class PlaceController extends Controller
      */
     public function createPlace()
     {
-        // return view('Place/create');
-        return view('TEST');
+        return view('Place/create');
+        // return view('TEST');
     }
 
     /**
@@ -55,7 +55,7 @@ class PlaceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function storePlace(Request $request)
-    {   
+    {
         $request->validate([
             'name'=>'required',
             'description'=>'required',
@@ -64,7 +64,7 @@ class PlaceController extends Controller
             //vérif champs formulaire
         ]);
         // upload photo
-        $imageName = time().'.'.$request->photo->extension();  
+        $imageName = time().'.'.$request->photo->extension();
         $request->photo->move(public_path('img/places/tmp'), $imageName);
 
         //récup exif photo
@@ -80,7 +80,7 @@ class PlaceController extends Controller
             echo "$lat, $lng";
         } else {
             //RETURN VIEW ERREUR
-            echo "No GPS Info"; 
+            echo "No GPS Info";
         };
         //API
         $ch = curl_init();
